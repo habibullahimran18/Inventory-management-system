@@ -1,18 +1,10 @@
 #include "Inventory.h"
-
-// =========================================================
-// InventoryItem Methods (Base Class)
-// =========================================================
 InventoryItem::InventoryItem(int id, string name) {
     this->id = id;
     this->name = name;
 }
 int InventoryItem::getId() { return id; }
 string InventoryItem::getName() { return name; }
-
-// =========================================================
-// Product Methods (Derived Class)
-// =========================================================
 Product::Product(int id, string name, string category, int quantity, double price)
     : InventoryItem(id, name) {
     this->category = category;
@@ -35,11 +27,6 @@ void Product::setPrice(double p) { price = p; }
 string Product::getCategory() { return category; }
 int Product::getQuantity() { return quantity; }
 double Product::getPrice() { return price; }
-
-// =========================================================
-// InventoryManager Methods
-// =========================================================
-
 void InventoryManager::loadProducts() {
     ifstream file(filename);
     if (!file) return;
@@ -47,7 +34,6 @@ void InventoryManager::loadProducts() {
     string line, name, category, qtyStr, priceStr;
 
     while (getline(file, line)) {
-        // Skip empty lines to prevent garbage data
         if (line.empty() || line.find_first_not_of(" \t\r\n") == string::npos) {
             continue;
         }
@@ -57,7 +43,6 @@ void InventoryManager::loadProducts() {
         int id = 0, quantity = 0;
         double price = 0.0;
 
-        // Try-catch ensures bad file data won't crash the program
         try {
             getline(ss, tempId, ',');  id = stoi(tempId);
             getline(ss, name, ',');
@@ -98,11 +83,10 @@ void InventoryManager::displayAll() {
     }
     cout << "\n--- All Products ---" << endl;
     for (Product& p : products) {
-        p.displayInfo();   // Polymorphic call
+        p.displayInfo();   
     }
 }
 
-// Overloaded: search by ID
 void InventoryManager::searchProduct(int id) {
     for (Product& p : products) {
         if (p.getId() == id) {
@@ -113,7 +97,6 @@ void InventoryManager::searchProduct(int id) {
     cout << "Product not found." << endl;
 }
 
-// Overloaded: search by Name
 void InventoryManager::searchProduct(string name) {
     for (Product& p : products) {
         if (p.getName() == name) {
