@@ -1,8 +1,6 @@
-// =========================================================
 // Project: Inventory Management System
 // Concepts: OOP, Inheritance, Polymorphism, File I/O,
 //           Function Overloading, Vectors, Try-Catch
-// =========================================================
 
 #include "Inventory.h"
 #include <iostream>

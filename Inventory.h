@@ -8,10 +8,7 @@
 #include <sstream>
 
 using namespace std;
-
-// =========================================================
 // Abstract Base Class
-// =========================================================
 class InventoryItem {
 protected:
     int id;
@@ -24,10 +21,7 @@ public:
     int getId();
     string getName();
 };
-
-// =========================================================
 // Derived Class
-// =========================================================
 class Product : public InventoryItem {
 private:
     string category;
@@ -44,10 +38,7 @@ public:
     int getQuantity();
     double getPrice();
 };
-
-// =========================================================
 // Manager Class
-// =========================================================
 class InventoryManager {
 private:
     vector<Product> products;

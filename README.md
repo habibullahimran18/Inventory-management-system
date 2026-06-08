@@ -1,8 +1,8 @@
-📦 Inventory Management System
+ Inventory Management System
 OOP Final Project — C++
 A console-based Inventory Management System built in C++ to demonstrate core Object-Oriented Programming (OOP) principles. The system allows users to seamlessly add products, view the complete inventory catalog, search for specific items, restock products, process sales with automatic total calculation, and generate inventory value reports. All data is persistently stored using file handling.
 
-✨ Core Features
+ Core Features
 
 Inventory Management: Add new products and view the complete product catalog.
 Smart Search: Search for products by either their unique ID or Name (Function Overloading).
@@ -12,7 +12,7 @@ Inventory Value Report: Compute and display the total monetary worth of all stoc
 Data Persistence: Automatically loads and saves all inventory data to a local text file (inventory_data.txt), ensuring no data is lost between sessions.
 
 
-🧠 OOP Concepts Implemented
+OOP Concepts Implemented
 
 Encapsulation: Class variables (id, name, category, quantity, price) are private and strictly accessed via public getter and setter methods.
 Abstraction: The InventoryItem class acts as an abstract blueprint, utilizing a pure virtual function (virtual void displayInfo() = 0;).
@@ -22,7 +22,7 @@ Dynamic Polymorphism: The displayInfo() method is overridden in the derived Prod
 Exception Handling: A try-catch block in loadProducts() silently skips any corrupt or malformed lines in the data file, preventing crashes.
 
 
-👥 Group Members & Work Breakdown
+Group Members & Work Breakdown
 This project was developed collaboratively. Responsibilities and core module development were divided as follows:
 1. All Group Members
 
