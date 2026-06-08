@@ -2,6 +2,14 @@
 // Concepts: OOP, Inheritance, Polymorphism, File I/O,
 //           Function Overloading, Vectors, Try-Catch
 
+/* ========================================
+   PART 1: Main Program Integration
+   Role: All Group Members
+   Details: GitHub Repository Management,
+   Central main.cpp execution flow, interactive
+   user menu, input validation, and integration
+   ======================================== */
+
 #include "Inventory.h"
 #include <iostream>
  
@@ -84,3 +92,5 @@ int main() {
     cout << "Exiting system. Goodbye!" << endl;
     return 0;
 }
+
+/* END PART 1: Main Program Integration */

@@ -5,3 +5,4 @@
 5,Notebook,Stationery,200,80
 133,Apple,5,7,200
 34,salt,nmk,34,123
+100,noodles,food,20,50

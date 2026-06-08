@@ -1,10 +1,20 @@
 #include "Inventory.h"
+
+/* ========================================
+   PART 2: Class Architecture & Base Abstraction
+   Role: M junaid zahid (2025-AI-365)
+   ======================================== */
 InventoryItem::InventoryItem(int id, string name) {
     this->id = id;
     this->name = name;
 }
 int InventoryItem::getId() { return id; }
 string InventoryItem::getName() { return name; }
+
+/* ========================================
+   PART 3: Core Product Mechanics & Dynamic Polymorphism
+   Role: Habibullah Imran (2025-AI-344)
+   ======================================== */
 Product::Product(int id, string name, string category, int quantity, double price)
     : InventoryItem(id, name) {
     this->category = category;
@@ -27,6 +37,13 @@ void Product::setPrice(double p) { price = p; }
 string Product::getCategory() { return category; }
 int Product::getQuantity() { return quantity; }
 double Product::getPrice() { return price; }
+
+/* ========================================
+   PART 5: Data Persistence & File Handling
+   Role: M. Umer (2025-AI-340)
+   Details: loadProducts() and saveProducts() with
+   stringstream parsing, try-catch for corrupt data
+   ======================================== */
 void InventoryManager::loadProducts() {
     ifstream file(filename);
     if (!file) return;
@@ -70,11 +87,20 @@ void InventoryManager::saveProducts() {
     file.close();
 }
 
+/* END PART 5: Data Persistence */
+
 void InventoryManager::addProduct(int id, string name, string category, int quantity, double price) {
     products.push_back(Product(id, name, category, quantity, price));
     saveProducts();
     cout << "Product added successfully!" << endl;
 }
+
+/* ========================================
+   PART 4: Search Modules, Sales & Restock Logic
+   Role: Syed Hassan Murtaza (2025-AI-327)
+   Details: displayAll(), searchProduct() overloads,
+   restockProduct(), sellProduct(), calculateInventoryValue()
+   ======================================== */
 
 void InventoryManager::displayAll() {
     if (products.empty()) {
@@ -86,6 +112,8 @@ void InventoryManager::displayAll() {
         p.displayInfo();   
     }
 }
+
+/* END PART 4: Search Modules, Sales & Restock Logic */
 
 void InventoryManager::searchProduct(int id) {
     for (Product& p : products) {
@@ -162,3 +190,7 @@ void InventoryManager::calculateInventoryValue() {
     cout << "TOTAL INVENTORY VALUE: Rs. " << total << endl;
     cout << "------------------------------\n" << endl;
 }
+
+/* END PART 4 */
+
+/* END PART 4 */
