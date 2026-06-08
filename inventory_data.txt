@@ -4,3 +4,4 @@
 4,USB Cable,Electronics,100,350
 5,Notebook,Stationery,200,80
 133,Apple,5,7,200
+34,salt,nmk,34,123
